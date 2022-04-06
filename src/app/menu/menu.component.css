@@ -1,59 +1,38 @@
-html, body{
-    padding:0px;
-    margin:0px;
-    font-family: 'Raleway', sans-serif;
-    color:#FFF;
-    height:100%;
- }
- body{
-    background:rgba(0, 0, 0, 0.5); 
+/* The sidebar menu */
+.sidenav {
+   height: 100%; /* Full-height: remove this if you want "auto" height */
+   width: 160px; /* Set the width of the sidebar */
+   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+   z-index: 1; /* Stay on top */
+   top: 0; /* Stay at the top */
+   left: 0;
+   background-color: #111; /* Black */
+   overflow-x: hidden; /* Disable horizontal scroll */
+   padding-top: 20px;
  }
  
- .container{
-    max-width:200px;
-    background:rgba(0, 0, 0, 0.75);
-    margin:40px auto;
-    padding:10px 0px 20px 0px;
-    border:1px solid #111;
-    border-radius:4px;
-    box-shadow:0px 4px 5px rgba(0, 0, 0, 0.75);
+ /* The navigation menu links */
+ .sidenav a {
+   padding: 6px 8px 6px 16px;
+   text-decoration: none;
+   font-size: 25px;
+   color: #818181;
+   display: block;
  }
- .link{
-    font-size:16px;
-    font-weight:300;
-    text-align:center;
-    position:relative;
-    height:40px;
-    line-height:40px;
-    margin-top:10px;
-    overflow:hidden;
-    width:90%;
-    margin-left:5%;
-    cursor:pointer;
+ 
+ /* When you mouse over the navigation links, change their color */
+ .sidenav a:hover {
+   color: #f1f1f1;
  }
- .link:after{
-    content: '';
-    position:absolute;
-    width:80%;
-    border-bottom:1px solid rgba(255, 255, 255, 0.5);
-    bottom:50%;
-    left:-100%;
-    transition-delay: all 0.5s;
-    transition: all 0.5s;
+ 
+ /* Style page content */
+ .main {
+   margin-left: 160px; /* Same as the width of the sidebar */
+   padding: 0px 10px;
  }
- .link:hover:after,
- .link.hover:after{
-    left:100%;
- }
- .link .text{
-    text-shadow:0px -40px 0px rgba(255, 255, 255, 1);
-    transition:all 0.75s;
-    transform:translateY(100%) translateZ(0);
-    transition-delay:all 0.25s;
- }
- .link:hover .text,
- .link.hover .text{
-    text-shadow:0px -40px 0px rgba(255, 255, 255, 0);
-    transform:translateY(0%) translateZ(0) scale(1.1);
-    font-weight:600;
+ 
+ /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+ @media screen and (max-height: 450px) {
+   .sidenav {padding-top: 15px;}
+   .sidenav a {font-size: 18px;}
  }
