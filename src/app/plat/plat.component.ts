@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { CartService } from './../services/cart.service';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-plat',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlatComponent implements OnInit {
 
-  constructor() { }
+  @Input() plat:any;
+  constructor(private service:CartService) { }
 
   ngOnInit(): void {
   }
-
+  addToCart(){
+    this.service.addItem(this.plat);
+    console.log(this.service.getCart());
+  }
 }

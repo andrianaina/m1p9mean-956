@@ -1,6 +1,7 @@
 import { SignService } from './../services/sign.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -8,20 +9,23 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  role:any[];
-  constructor(private InscrService : SignService) {
-    this.role=['client','admin','livreur','restaurant'];
+  role: any[];
+  constructor(private InscrService: SignService, private router: Router) {
+    this.role = ['client', 'admin'];
   }
-
   ngOnInit(): void {
   }
-  onSubmit(f:NgForm){
+  onSubmit(f: NgForm) {
+    f.value.address = 'none';
+    f.value.role = 'client';
+    f.value.tel = 'none';
     this.InscrService.register(f.value).subscribe(
-      (data)=>{
-        console.log(data);
+      (data) => {
+        alert('success');
+        this.router.navigateByUrl('login');
       },
-      (err)=>{
-        console.log("Error "+err);
+      (err) => {
+        alert(err.error);
       }
     );
   }

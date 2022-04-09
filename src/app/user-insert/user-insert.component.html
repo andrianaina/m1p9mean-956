@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-md-12 d-md-flex half">
+        <div class="contents">
+
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-12">
+                        <div class="form-block mx-auto">
+                            <div class="text-center mb-5">
+                                <h3 class="text-uppercase">Ajouter<strong> {{mysection}} E-kaly</strong></h3>
+                            </div>
+                            <form #f="ngForm" method="POST" (ngSubmit)="onSubmit(f)">
+                                <div class="form-group first">
+                                    <label for="username">Nom d'utilisateur</label>
+                                    <input type="text" name="username" class="form-control" placeholder="" id="username"
+                                        ngModel>
+                                </div>
+                                <div class="form-group last mb-3">
+                                    <label for="password">Tel</label>
+                                    <input type="text" name="tel" class="form-control" placeholder="" ngModel>
+                                </div>
+                                <div class="form-group last mb-3">
+                                    <label for="password">Adresse</label>
+                                    <input type="text" name="address" class="form-control" placeholder="" ngModel>
+                                </div>
+                                <div class="form-group last mb-3">
+                                    <label for="password">email</label>
+                                    <input type="mail" name="email" class="form-control" placeholder="" ngModel>
+                                </div>
+
+                                <div class="form-group last mb-3">
+                                    <label for="password">Mot de passe</label>
+                                    <input type="password" name="mdp" class="form-control" placeholder="" id="password"
+                                        ngModel>
+                                </div>
+
+                                <button type="submit" value="Log In"
+                                    class="btn btn-block py-2 btn-primary">Valider</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

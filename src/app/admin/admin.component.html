@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-md-3">
+        <ul>
+            <li><a href="admin/config/livreur"></a> Config livreur</li>
+            <li><a href="admin/config/restaurant"></a> Config restaurant</li>
+            <li><a href="admin/benefits"></a> Config restaurant</li>
+        </ul>
+    </div>
+    <div class="col-md-9">
+        <div class="row">
+            <div class="col-md-4">
+                <app-user-insert [mysection]="section"></app-user-insert>
+            </div>
+            <div class="col-md-8">
+                <app-user-table [list]="list"></app-user-table>
+            </div>
+        </div>
+
+    </div>

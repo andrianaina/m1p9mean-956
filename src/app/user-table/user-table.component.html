@@ -1,0 +1,22 @@
+<div class="container mt-5 px-2">
+    <div class="table-responsive">
+        <table class="table table-responsive table-bordered-stripped">
+            <thead>
+                <tr class="bg-light">
+                    <th scope="col" width="5%">Nom</th>
+                    <th scope="col" width="20%">Adresse</th>
+                    <th scope="col" width="20%">Tel</th>
+                    <th scope="col" class="text-end" width="20%"><span>Email</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of list">
+                    <td>{{item.username}}</td>
+                    <td>{{item.addresse}}</td>
+                    <td>{{item.tel}}</td>
+                    <td class="text-end"><span class="fw-bolder">{{item.email}}</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
