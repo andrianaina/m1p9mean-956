@@ -24,6 +24,7 @@ import { UserTableComponent } from './user-table/user-table.component';
 import { CommandeTableComponent } from './commande-table/commande-table.component';
 import { CommandeRestaurantTableComponent } from './commande-restaurant-table/commande-restaurant-table.component';
 import { CommandeLivreurComponent } from './commande-livreur/commande-livreur.component';
+import { AdminSidebarComponent } from './admin-sidebar/admin-sidebar.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { CommandeLivreurComponent } from './commande-livreur/commande-livreur.co
     UserTableComponent,
     CommandeTableComponent,
     CommandeRestaurantTableComponent,
-    CommandeLivreurComponent
+    CommandeLivreurComponent,
+    AdminSidebarComponent
   ],
   imports: [
     BrowserModule,

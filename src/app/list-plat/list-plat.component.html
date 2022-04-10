@@ -1,14 +1,50 @@
 <!-- <app-navbar  class="fixed-top" style="width:100%"></app-navbar> -->
 
-<app-menu [listrestaurant]="listrestaurant" class="col-md-3" style="width: 100%;"></app-menu>
+<!-- <app-menu [listrestaurant]="listrestaurant" class="col-md-3" style="width: 100%;"></app-menu> -->
 <div class="row bottom-div">
     <div class="col-md-3">
-
+        <nav class="menu" tabindex="0">
+            <div class="smartphone-menu-trigger"></div>
+            <header class="avatar">
+                <img src="https://s3.amazonaws.com/uifaces/faces/twitter/kolage/128.jpg" />
+                <h2>Client</h2><a href="client/cart">cart</a>
+            </header>
+            <h3>List Restaurant</h3>
+            <ul>
+                <li tabindex="0" *ngFor="let item of listrestaurant" class="icon-dashboard"><a href="plat/{{item._id}}">
+                        <h4>{{item.username}}</h4>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </div>
     <div class="col-md-9">
         <div class="row">
             <app-plat class="col-md-4" *ngFor="let plat of listplat" [plat]="plat"></app-plat>
         </div>
-        <!-- <div class="row"><app-pagination style="width: 100%;"></app-pagination></div> -->
+        <!-- <div class="row">
+            <app-pagination style="width: 100%;"></app-pagination>
+        </div> -->
     </div>
 </div>
+
+<!-- <nav class="menu" tabindex="0">
+    <div class="smartphone-menu-trigger"></div>
+    <header class="avatar">
+        <img src="https://s3.amazonaws.com/uifaces/faces/twitter/kolage/128.jpg" />
+        <h2>John D.</h2>
+    </header>
+    <ul>
+        <li tabindex="0" class="icon-dashboard"><span>Dashboard</span></li>
+        <li tabindex="0" class="icon-customers"><span>Customers</span></li>
+        <li tabindex="0" class="icon-users"><span>Users</span></li>
+        <li tabindex="0" class="icon-settings"><span>Settings</span></li>
+    </ul>
+</nav>
+
+<main>
+    <div class="helper">
+        RESIZE THE WINDOW
+        <span>Breakpoints on 900px and 400px</span>
+    </div>
+</main> -->

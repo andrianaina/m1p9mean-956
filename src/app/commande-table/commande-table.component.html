@@ -1,20 +1,60 @@
-<div class="container mt-5 px-2">
-    <div class="table-responsive">
-        <table class="table table-responsive table-bordered-stripped">
-            <thead>
-                <tr class="bg-light">
-                    <th scope="col" width="5%">Adresse de livraison</th>
-                    <th scope="col" width="20%">date</th>
-                    <th scope="col" width="20%">Livreur</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let item of list">
-                    <td>{{item.address}}</td>
-                    <td>{{item.livraisondate}}</td>
-                    <td>{{item.livreur}}</td>
-                </tr>
-            </tbody>
-        </table>
+<div class="row bottom-div">
+    <div class="col-md-3">
+        <nav class="menu" tabindex="0">
+            <div class="smartphone-menu-trigger"></div>
+            <header class="avatar">
+                <img src="https://s3.amazonaws.com/uifaces/faces/twitter/kolage/128.jpg" />
+                <h2>Admin</h2>
+            </header>
+            <ul>
+                <!-- <li tabindex="0" class="icon-dashboard"><span>Dashboard</span></li>
+                <li tabindex="0" class="icon-customers"><span>Customers</span></li>
+                <li tabindex="0" class="icon-users"><span>Users</span></li>
+                <li tabindex="0" class="icon-settings"><span>Settings</span></li> -->
+                <li tabindex="0" class="icon-settings">
+                    <h5><a href="admin/config/livreur"><span>Config livreur</span></a></h5>
+                </li>
+                <li tabindex="0" class="icon-settings">
+                    <h5><a href="admin/config/restaurant"><span>Config</span>
+                            restaurant</a></h5>
+                </li>
+                <li tabindex="0" class="icon-settings">
+                    <h5><a href="admin/benefits"><span>Benefice</span></a></h5>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="col-md-9">
+        <div class="table-responsive">
+            <table class="table table-responsive table-bordered-stripped">
+                <thead>
+                    <tr class="bg-light">
+                        <th scope="col" width="15%">Client</th>
+                        <th scope="col" width="15%">Address de livraison</th>
+                        <th scope="col" width="15%">date</th>
+                        <th scope="col" width="25%">Livreur</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of list">
+                        <td>{{item.idclient.username}}</td>
+                        <td>{{item.address}}</td>
+                        <td>{{item.livraisondate}}</td>
+                        <td>
+                            {{item.idlivreur.username}}
+                            <form #l="ngForm" action="" method="post" (ngSubmit)="onSubmit(item._id,l)">
+                                <select name="idlivreur" ngModel>
+                                    <option *ngFor="let livreur of listlivreur " value="{{livreur._id}}">
+                                        {{livreur.username}}
+                                    </option>
+                                </select>
+                                <button type="submit" class="btn btn-primary">Mettre a jour</button>
+                            </form>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

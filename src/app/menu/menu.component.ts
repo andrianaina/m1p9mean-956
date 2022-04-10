@@ -6,8 +6,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  @Input() listrestaurant!:any[];
-  constructor() {}
+  @Input() listrestaurant!: any[];
+  constructor() { }
   ngOnInit(): void {
 
   }

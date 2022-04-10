@@ -20,7 +20,8 @@ const routes: Routes = [
   { path: 'restaurant/benefits', component: CommandeRestaurantTableComponent },
   { path: 'client/cart', component: CartComponent },
   { path: 'admin/commande', component: CommandeTableComponent },
-  { path: 'admin/:section', component: AdminComponent },
+  { path: 'admin/benefits', component: CommandeTableComponent },
+  { path: 'admin/config/:section', component: AdminComponent },
   { path: 'livreur', component: CommandeLivreurComponent }
 ];
 

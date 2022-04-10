@@ -1,5 +1,5 @@
 <div class="container">
-<div class="row ">
+    <div class="row ">
         <Div class="container-fluid"></Div>
         <div class="card mt-2 mx-auto p-4 bg-light">
             <div class="card-body bg-light">
@@ -8,32 +8,31 @@
                         <div class="controls">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="form-group"> <label for="form_name">Nom *</label> <input id="form_name" type="text" name="name" class="form-control" placeholder="" required="required" data-error="required" ngModel> </div>
+                                    <div class="form-group"> <label for="form_name">Nom *</label> <input id="form_name"
+                                            type="text" name="name" class="form-control" placeholder=""
+                                            required="required" data-error="required" ngModel> </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="form-group"> <label for="form_need">Restaurant *</label> 
-                                        <select id="form_need" name="idrestaurant" class="form-control" ngModel required="required" data-error="specify restuaurant">
-                                            <option value="" selected disabled>--Select Your Issue--</option>
-                                            <option *ngFor="let item of listrestaurant" value="{{item._id}}" >{{item.username}}</option>
-                                        </select> 
+                                    <div class="form-group"> <label for="prix">Prix *</label> <input id="prix"
+                                            type="number" name="prixrestaurant" class="form-control" placeholder="0.0Ar"
+                                            required="required" data-error="required." ngModel> </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group"> <label for="prixEkaly">Prix Ekaly*</label> <input
+                                            id="prixEkaly" type="number" name="prix" class="form-control"
+                                            placeholder="0.0Ar" required="required" data-error="required" ngModel>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="form-group"> <label for="prix">Prix *</label> <input id="prix" type="number" name="prixrestaurant" class="form-control" placeholder="0.0Ar" required="required" data-error="required." ngModel> </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group"> <label for="prixEkaly">Prix Ekaly*</label> <input id="prixEkaly" type="number" name="prix" class="form-control" placeholder="0.0Ar" required="required" data-error="required" ngModel> </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group"> <label for="form_name">cout*</label> <input id="form_name" type="number" name="cout" class="form-control" placeholder="0.0Ar" required="required" data-error="required" ngModel> </div>
+                                    <div class="form-group"> <label for="form_name">cout*</label> <input id="form_name"
+                                            type="number" name="cout" class="form-control" placeholder="0.0Ar"
+                                            required="required" data-error="required" ngModel> </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary" style="width:100%">Inserer plat</button>
                             </div>

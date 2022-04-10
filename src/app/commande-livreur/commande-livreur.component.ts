@@ -11,7 +11,10 @@ export class CommandeLivreurComponent implements OnInit {
   constructor(private service: OtherService) { }
 
   async ngOnInit() {
-    this.list = await this.service.findCommandelivreur(localStorage.getItem('userid'));
+    this.list = await this.service.findCommandelivreur(localStorage.getItem('userId'));
   }
-
+  livrer(id: any) {
+    alert('haha');
+    this.service.livrer(id).subscribe();
+  }
 }

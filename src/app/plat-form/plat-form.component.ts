@@ -15,6 +15,7 @@ export class PlatFormComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit(f: NgForm) {
+    f.value.idrestaurant = localStorage.getItem('userId');
     this.service.addNewPlat(f.value).subscribe(
       (data) => {
 

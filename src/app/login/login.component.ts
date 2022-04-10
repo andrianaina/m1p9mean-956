@@ -10,36 +10,42 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private loginService:SignService,private router:Router) { }
+  constructor(private loginService: SignService, private router: Router) { }
 
   ngOnInit(): void {
+    if (localStorage.getItem("userId") && localStorage.getItem("role")) {
+      var location = 'plat';
+      switch (localStorage.getItem('role')) {
+        case 'admin':
+          location = 'admin/commande';
+          break;
+        case 'livreur':
+          location = 'livreur';
+          break;
+        case 'admin':
+          location = 'restaurant/benefits';
+          break;
+        case 'client':
+          location = 'plat';
+          break;
+      }
+      this.router.navigateByUrl(location);
+    }
   }
 
-  onSubmit(f:NgForm){
+  onSubmit(f: NgForm) {
     this.loginService.login(f.value).subscribe(
-      (data)=>{
+      (data) => {
         alert('success');
         console.log(data);
-        localStorage.setItem('userId',data.idUser);
-        localStorage.setItem('token',data.token);
-        localStorage.setItem('role',data.role);
-        
-        var location='plat';
-        switch(data.role){
-          case 'admin':
-            location='ekaly/admin';
-          break;
-          case 'client':
-            location='plat';
-          break;
-          default:
-            location='plat';
-        }
-        this.router.navigateByUrl(location);
+        localStorage.setItem('userId', data.idUser);
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('role', data.role);
       },
-      (err)=>{
+      (err) => {
         alert(err.error);
       }
     );
+    window.location.reload();
   }
 }

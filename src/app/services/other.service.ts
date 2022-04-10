@@ -66,6 +66,12 @@ export class OtherService {
   addNewPlat(r: any): Observable<any> {
     return this.http.post(baseUrl + 'plat/add', r);
   }
+  updateLivreur(r: any): Observable<any> {
+    return this.http.put(baseUrl + 'commande/updatelivreur/', r);
+  }
+  livrer(r: any): Observable<any> {
+    return this.http.put(baseUrl + 'commande/livre/' + r, []);
+  }
   updatelivrablePlat(r: any): Observable<any> {
     return this.http.put(baseUrl + 'commande/Plat/islivrable/' + r, []);
   }
