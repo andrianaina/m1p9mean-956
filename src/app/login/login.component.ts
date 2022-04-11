@@ -22,11 +22,11 @@ export class LoginComponent implements OnInit {
         case 'livreur':
           location = 'livreur';
           break;
-        case 'admin':
+        case 'restaurant':
           location = 'restaurant/benefits';
           break;
         case 'client':
-          location = 'plat';
+          location = 'plat'; 
           break;
       }
       this.router.navigateByUrl(location);
@@ -34,17 +34,18 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(f: NgForm) {
-    this.loginService.login(f.value).subscribe(
-      (data) => {
-        alert('success');
-        localStorage.setItem('userId', data.idUser);
-        localStorage.setItem('token', data.token);
-        localStorage.setItem('role', data.role);
-      },
-      (err) => {
-        alert(err.error);
-      }
-    );
+    alert(f.value.mdp);
+    // this.loginService.login(f.value).subscribe(
+    //   (data) => {
+    //     alert('success');
+    //     localStorage.setItem('userId', data.idUser);
+    //     localStorage.setItem('token', data.token);
+    //     localStorage.setItem('role', data.role);
+    //   },
+    //   (err) => {
+    //     alert(err.error);
+    //   }
+    // );
     window.location.reload();
   }
 }
