@@ -7,7 +7,7 @@ export const environment = {
   cart:[]
 };
 
-export const baseUrl='http://localhost:5500/';
+export const baseUrl='https://m1p9api-henintsoa956.herokuapp.com/';
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
