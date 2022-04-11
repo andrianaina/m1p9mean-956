@@ -46,6 +46,6 @@ export class LoginComponent implements OnInit {
     //     alert(err.error);
     //   }
     // );
-    window.location.reload();
+    // window.location.reload();
   }
 }
