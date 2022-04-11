@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { error } from 'protractor';
+import { Router } from '@angular/router';
 import { OtherService } from '../services/other.service';
 import { CartService } from './../services/cart.service';
 @Component({
@@ -10,9 +10,15 @@ import { CartService } from './../services/cart.service';
 export class CartComponent implements OnInit {
   cart: any = [];
   total = 0;
-  constructor(private service: CartService, private commandeService: OtherService) { }
+  constructor(private service: CartService, private commandeService: OtherService,private router: Router) { }
 
   ngOnInit(): void {
+    if (!localStorage.getItem('userId') || !localStorage.getItem('role')) {
+      localStorage.clear();
+      alert('Authentification required');
+      this.router.navigateByUrl('login');
+    }
+
     this.cart = this.service.getCart();
     this.total = this.service.getTotal();
   }

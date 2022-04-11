@@ -1,24 +1,14 @@
-<div class="card-body wrapper">
-  <div class="container">
-    <div class="top"></div>
-    <div class="bottom">
-      <div class="left">
-        <div class="details">
-          <h1>{{plat.name}}</h1>
-          <p>prix</p>
-        </div>
-        <div class="buy"><button (click)="addToCart()"> Ajouter </button></div>
-      </div>
+<div class="container">
+  <div class="card">
+    <div class="imgBx">
+      <img src="https://assets.codepen.io/4164355/shoes.png">
     </div>
-    <div class="inside">
-      <div class="icon"><i class="material-icons">info</i></div>
-      <div class="contents">
-        <table>
-          <tr>
-            <th>Plat tres bon</th>
-            <th>Description</th>
-          </tr>
-        </table>
+    <div class="contentBx">
+      <h2>{{plat.name}}</h2>
+      <div class="size">
+        <h3>{{plat.prix}}</h3>
       </div>
+      <button (click)="addToCart()"> Ajouter </button>
     </div>
   </div>
+</div>

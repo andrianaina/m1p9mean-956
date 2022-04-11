@@ -13,6 +13,12 @@ export class ListPlatComponent implements OnInit {
   constructor(private service: OtherService, private router: Router, private route: ActivatedRoute) { this.listplat = []; this.listrestaurant = []; }
 
   async ngOnInit() {
+    if (!localStorage.getItem('userId') || !localStorage.getItem('role')) {
+      localStorage.clear();
+      alert('Authentification required');
+      this.router.navigateByUrl('login');
+    }
+    
     const id = this.route.snapshot.params['id'];
 
     this.listrestaurant = await this.service.findAllRestaurant();

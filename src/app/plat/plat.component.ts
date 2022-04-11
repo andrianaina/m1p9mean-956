@@ -12,9 +12,10 @@ export class PlatComponent implements OnInit {
   constructor(private service:CartService) { }
 
   ngOnInit(): void {
+    
   }
   addToCart(){
     this.service.addItem(this.plat);
-    console.log(this.service.getCart());
+    window.location.reload();
   }
 }

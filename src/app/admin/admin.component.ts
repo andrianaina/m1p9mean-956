@@ -13,6 +13,11 @@ export class AdminComponent implements OnInit {
   constructor(private service: SignService, private route: ActivatedRoute, private router: Router) { }
 
   async ngOnInit() {
+    if (!localStorage.getItem('userId') || !localStorage.getItem('role')) {
+      localStorage.clear();
+      alert('Authentification required');
+      this.router.navigateByUrl('login');
+    }
     this.section = this.route.snapshot.params['section'];
     if (this.section != "admin" && this.section != "restaurant" && this.section != "livreur") {
       this.router.navigateByUrl('admin/admin');

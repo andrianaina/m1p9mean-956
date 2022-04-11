@@ -13,6 +13,11 @@ export class PlatFormComponent implements OnInit {
   constructor(private service: OtherService, private router: Router) { }
 
   ngOnInit(): void {
+    if (!localStorage.getItem('userId') || !localStorage.getItem('role')) {
+      localStorage.clear();
+      alert('Authentification required');
+      this.router.navigateByUrl('login');
+    }
   }
   onSubmit(f: NgForm) {
     f.value.idrestaurant = localStorage.getItem('userId');

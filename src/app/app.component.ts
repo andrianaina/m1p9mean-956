@@ -10,11 +10,6 @@ export class AppComponent implements OnInit {
   cart: any = [];
   constructor(private router: Router) { }
   ngOnInit(): void {
-    if (!localStorage.getItem('userId') || !localStorage.getItem('role')) {
-      localStorage.clear();
-      alert('Authentification required');
-      this.router.navigateByUrl('login');
-    }
     if (!localStorage.getItem('Cart')) {
       console.log('localStorage not initialized');
       localStorage.setItem('Cart', '[]')

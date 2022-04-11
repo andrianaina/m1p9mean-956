@@ -10,6 +10,7 @@ export class LivreurComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
