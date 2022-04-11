@@ -34,18 +34,17 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(f: NgForm) {
-    alert(f.value.mdp);
-    // this.loginService.login(f.value).subscribe(
-    //   (data) => {
-    //     alert('success');
-    //     localStorage.setItem('userId', data.idUser);
-    //     localStorage.setItem('token', data.token);
-    //     localStorage.setItem('role', data.role);
-    //   },
-    //   (err) => {
-    //     alert(err.error);
-    //   }
-    // );
-    // window.location.reload();
+    this.loginService.login(f.value).subscribe(
+      (data) => {
+        alert('success');
+        localStorage.setItem('userId', data.idUser);
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('role', data.role);
+      },
+      (err) => {
+        alert(err.error);
+      }
+    );
+    window.location.reload();
   }
 }
